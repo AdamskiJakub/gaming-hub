@@ -1,4 +1,5 @@
 import {
+  Box,
   Button,
   ButtonGroup,
   Grid,
@@ -14,6 +15,7 @@ import { Genre } from "./hooks/useGenres";
 import PlatformSelector from "./Components/PlatformSelector";
 import { Platform } from "./hooks/useGames";
 import SortSelector from "./Components/SortSelector";
+import GameHeading from "./Components/GameHeading";
 
 export interface GameQuery {
   genre: Genre | null;
@@ -50,6 +52,9 @@ function App() {
         </GridItem>
       </Show>
       <GridItem area="main">
+        <Box paddingLeft={2}>
+          <GameHeading gameQuery={gameQuery} />
+        </Box>
         <HStack paddingLeft={2} spacing={5} marginBottom={5}>
           <PlatformSelector
             selectedPlatform={gameQuery.platform}
